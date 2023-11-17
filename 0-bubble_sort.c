@@ -10,13 +10,15 @@
 void bubble_sort(int *array, size_t size)
 {
 	size_t last_sorted = size;
+	size_t current;
 	int swapped = 1;
+	int temp;
 
 	if (array == NULL || size < 2)
 		return;
 	while (swapped)
 	{
-		size_t current = 0;
+		current = 0;
 
 		swapped = 0;
 
@@ -24,7 +26,7 @@ void bubble_sort(int *array, size_t size)
 		{
 			if (array[current] > array[current + 1])
 			{
-				int temp = array[current];
+				temp = array[current];
 
 				array[current] = array[current + 1];
 				array[current + 1] = temp;
