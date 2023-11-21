@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * swap - Swaps two elements in an array.
+ * _swap - Swaps two elements in an array.
  * @arr: The array to perform the swap.
  * @first: Index of the first element to be swapped.
  * @second: Index of the second element to be swapped.
@@ -21,7 +21,7 @@ void _swap(int arr[], int first, int second, int asc)
 }
 
 /**
- * merge - Merges bitonic sequences recursively in both orders.
+ * _merge - Merges bitonic sequences recursively in both orders.
  * @arr: The array to perform merging.
  * @low: The starting index of the elements to be merged.
  * @elems: The number of elements to be merged.
