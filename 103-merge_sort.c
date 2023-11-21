@@ -56,7 +56,8 @@ void merge_recursive(int *array, size_t size)
  *
  * Return: Nothing.
  */
-void merge(int *array, size_t size, int *left, size_t left_size, int *right, size_t right_size)
+void merge(int *array, size_t size, int *left, size_t left_size,
+		int *right, size_t right_size)
 {
 	size_t i = 0, j = 0, k = 0;
 	int *temp = malloc(size * sizeof(int));

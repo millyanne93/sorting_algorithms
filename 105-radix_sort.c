@@ -76,5 +76,5 @@ int find_max(int *array, size_t size)
 		if (array[i] > max)
 			max = array[i];
 	}
-	return max;
+	return (max);
 }

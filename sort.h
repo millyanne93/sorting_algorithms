@@ -53,5 +53,7 @@ int find_max(int *array, size_t size);
 void count_sort(int *array, size_t size, int exp);
 void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
+void quicksort_hoare_recursion(int *array, int low, int high);
+int hoare_partition(int *array, int low, int high);
 
 #endif /* SORT_H */
