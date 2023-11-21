@@ -31,6 +31,8 @@ void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 void swap(int *a, int *b);
+void fixHeap(int *array, size_t root, size_t end, size_t size);
+void buildHeap(int *array, size_t size);
 int partition(int arr[], int low, int high);
 void quicksort_recursion(int *array, int low, int high, size_t size);
 
