@@ -31,7 +31,7 @@ void _merge(int arr[], int low, int elems, int asc)
 {
 	int mid, i;
 
-	if (elems > 1) 
+	if (elems > 1)
 	{
 		mid = elems / 2;
 		for (i = low; i < low + mid; i++)
@@ -87,7 +87,7 @@ void bitonic_sort_recursive(int arr[], int low, int elems, int asc, int size)
  * @arr: The array to be sorted.
  * @size: The size of the array.
  */
-void bitonic_sort(int *arr, size_t size) 
+void bitonic_sort(int *arr, size_t size)
 {
 	int asc = 1;
 
