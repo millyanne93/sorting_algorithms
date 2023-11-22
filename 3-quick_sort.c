@@ -18,7 +18,7 @@ void swap(int *a, int *b)
 }
 
 /**
- * partition - Implements the Lomuto partition scheme.
+ * lomuto_partition - Implements the Lomuto partition scheme.
  * @array: The array to be sorted.
  * @low: Starting index of the partition.
  * @high: Last index of the partition.
@@ -26,7 +26,7 @@ void swap(int *a, int *b)
  *
  * Return: Index of the pivot element.
  */
-int partition(int *array, int low, int high, size_t size)
+int lomuto_partition(int *array, int low, int high, size_t size)
 {
 	int pivot;
 	int i;
@@ -65,7 +65,7 @@ void quicksort_recursion(int *array, int low, int high, size_t size)
 
 	if (low < high)
 	{
-		pivot_index = partition(array, low, high, size);
+		pivot_index = lomuto_partition(array, low, high, size);
 		quicksort_recursion(array, low, pivot_index - 1, size);
 		quicksort_recursion(array, pivot_index + 1, high, size);
 	}

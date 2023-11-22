@@ -39,6 +39,7 @@ void swap_nodes(listint_t **list, listint_t *a, listint_t *b);
 void bitonic_sort_recursive(int arr[], int low, int elems, int asc, int size);
 void _merge(int arr[], int low, int elems, int asc);
 void _swap(int arr[], int first, int second, int asc);
+int lomuto_partition(int *array, int low, int high, size_t size);
 
 /*Advanced Tasks*/
 void shell_sort(int *array, size_t size);
