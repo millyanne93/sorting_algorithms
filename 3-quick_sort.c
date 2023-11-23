@@ -33,21 +33,26 @@ int lomuto_partition(int *array, int low, int high, size_t size)
 	int j;
 
 	pivot = array[high];
-	i = low;
+	i = low - 1;
 
 	for (j = low; j < high; j++)
 	{
 		if (array[j] <= pivot)
 		{
-			swap(&array[i], &array[j]);
 			i++;
+			if (i != j)
+			{
+			swap(&array[i], &array[j]);
 			print_array(array, size);
+			}
 		}
 	}
-	swap(&array[i], &array[high]);
+	if (array[i +1] != array[high])
+	{
+	swap(&array[i + 1], &array[high]);
 	print_array(array, size);
-
-	return (i);
+	}
+	return (i + 1);
 }
 
 /**
