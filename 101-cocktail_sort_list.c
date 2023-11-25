@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * cocktail_sort_list - Sorts a doubly lined list using
+ * cocktail_sort_list - Sorts a doubly linked list using
  * the cocktail shaker algorithm.
  * @list: Pointer to the pointer to the head of the list.
  *
@@ -10,37 +10,40 @@
 void cocktail_sort_list(listint_t **list)
 {
 	int swapped = 1;
-	listint_t *start = NULL;
-	listint_t *end = NULL;
+	listint_t *temp;
 
 	if (list == NULL || *list == NULL)
 		return;
-
-	do {
+	temp = *list;
+	while (swapped != 0)
+	{
 		swapped = 0;
-		for (start = *list; start->next != end; start = start->next)
+		while (temp->next != NULL)
 		{
-			if (start->n > start->next->n)
+			if (temp->next->n < temp->n)
 			{
-				swap_nodes(list, start, start->next);
+				swap_nodes(list, temp, temp->next);
 				swapped = 1;
+				print_list(*list);
 			}
+			else
+				temp = temp->next;
 		}
-		if (!swapped)
+		if (swapped == 0)
 			break;
-
-		end = start;
-
 		swapped = 0;
-		for (; start->prev != NULL; start = start->prev)
+		while (temp->prev != NULL)
 		{
-			if (start->n < start->prev->n)
+			if (temp->prev->n > temp->n)
 			{
-				swap_nodes(list, start->prev, start);
+				swap_nodes(list, temp->prev, temp);
 				swapped = 1;
+				print_list(*list);
 			}
+			else
+				temp = temp->prev;
 		}
-	} while (swapped);
+	}
 }
 
 /**
@@ -55,18 +58,18 @@ void swap_nodes(listint_t **list, listint_t *a, listint_t *b)
 {
 	if (a == NULL || b == NULL || list == NULL || *list == NULL)
 		return;
-
 	if (a->prev != NULL)
 		a->prev->next = b;
 	else
 		*list = b;
-
 	if (b->next != NULL)
 		b->next->prev = a;
-
 	a->next = b->next;
 	b->prev = a->prev;
+
 	a->prev = b;
 	b->next = a;
-	print_list(*list);
+
+	if (a->next != NULL)
+		a->next->prev = a;
 }
